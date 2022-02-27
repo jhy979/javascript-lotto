@@ -103,7 +103,7 @@ function _purchaseLotto2(e) {
     this.view.showWinningLottoContainer();
     this.view.showPurchasedLottos(this.lottoGame.lottoWallet);
   } catch (err) {
-    alert(err);
+    alert(err.message);
   }
 
   this.view.clearMoneyInput(this.lottoGame.moneyInput % _constants_constants_js__WEBPACK_IMPORTED_MODULE_3__.CONDITIONS.LOTTO_PRICE);
