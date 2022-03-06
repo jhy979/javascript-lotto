@@ -179,7 +179,7 @@ function _showLottoResult2(e) {
     e.preventDefault();
     var winningNumbersObj = this.modalView.getWinningNumbersInput();
     var bonusNumber = Number(this.modalView.bonusNumber.value);
-    _utils_js__WEBPACK_IMPORTED_MODULE_2__.validator.isWinningInputValid(winningNumbersObj, bonusNumber);
+    _utils_js__WEBPACK_IMPORTED_MODULE_2__.validator.checkWinningInputValid(winningNumbersObj, bonusNumber);
     this.lottoGame.getWinningNumbers(winningNumbersObj, bonusNumber);
     this.lottoGame.compareLottos();
     this.lottoGame.getLottoProfit();
@@ -444,7 +444,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 var validator = {
-  isInputValid: function isInputValid(input) {
+  checkMoneyInputValid: function checkMoneyInputValid(input) {
     if (this.isMoneyZeroNegative(input)) {
       throw new Error(_constants_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.NEGATIVE_INPUT);
     }
@@ -473,7 +473,7 @@ var validator = {
   isMoneyTooSmall: function isMoneyTooSmall(input) {
     return input < _constants_constants__WEBPACK_IMPORTED_MODULE_0__.CONDITIONS.LOTTO_PRICE;
   },
-  isWinningInputValid: function isWinningInputValid(winningNumbers, bonusNumber) {
+  checkWinningInputValid: function checkWinningInputValid(winningNumbers, bonusNumber) {
     if (this.isWinningsEmpty(winningNumbers, bonusNumber)) {
       throw new Error(_constants_constants__WEBPACK_IMPORTED_MODULE_0__.ERROR_MESSAGE.WINNINGS_NO_EMPTY);
     }
